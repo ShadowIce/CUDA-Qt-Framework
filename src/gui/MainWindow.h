@@ -1,3 +1,5 @@
+/* Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php */
+
 #ifndef _MAIN_WINDOW_H_
 #define _MAIN_WINDOW_H_
 
