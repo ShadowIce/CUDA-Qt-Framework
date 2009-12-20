@@ -1,0 +1,11 @@
+PROJECT(CUDA-Qt-Framework)
+
+CMAKE_MINIMUM_REQUIRED(VERSION 2.6.0)
+
+# requires Qt4 and CUDA
+FIND_PACKAGE(Qt4 REQUIRED)
+FIND_PACKAGE(CUDA REQUIRED)
+ 
+# This is where the source code is.
+SUBDIRS(src)
+ 
