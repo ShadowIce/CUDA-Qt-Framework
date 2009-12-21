@@ -15,6 +15,6 @@ Windows/mingw:
 
 
 Qt doesn't install any DLL files into the system32 directory for Windows. If
-you get any errors about missing DLL files this is mainly because the Qt bin
+you get any errors about missing DLL files this is probably because the Qt bin
 directory is not in your PATH variable. You can either add it or copy the
 missing DLL files into the application directory.
