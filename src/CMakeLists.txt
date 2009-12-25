@@ -9,18 +9,27 @@ ENDIF()
 
 INCLUDE(${QT_USE_FILE})
 
+# List of all the C++ source code files
 SET(cuda_qt_framework_SRCS_CXX
 	gui/MainWindow.cpp
 	
 	main.cpp
 )
 
+# List of all Qt header files
 SET(cuda_qt_framework_MOC_HDRS
 	gui/MainWindow.h
 )
 
+# List of Qt .ui files
 SET(cuda_qt_framework_UIS
 	gui/MainWindow.ui
+)
+
+# List of CUDA files
+SET(cuda_qt_framework_CUDA_SRCS
+	cuda/HelloCuda.cu
+	cuda/MainCuda.cu
 )
 
 # .ui files
@@ -31,13 +40,13 @@ INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR})
 QT4_WRAP_CPP(cuda_qt_framework_SRCS_CXX ${cuda_qt_framework_MOC_HDRS})
 
 IF(UNIX)
-  ADD_EXECUTABLE(CUDA-Qt-Framework ${cuda_qt_framework_SRCS_CXX})
+  CUDA_ADD_EXECUTABLE(${CMAKE_PROJECT_NAME} ${cuda_qt_framework_CUDA_SRCS} ${cuda_qt_framework_SRCS_CXX})
 ELSEIF(APPLE)
-  ADD_EXECUTABLE(CUDA-Qt-Framework MACOSX_BUNDLE ${cuda_qt_framework_SRCS_CXX})
+  CUDA_ADD_EXECUTABLE(${CMAKE_PROJECT_NAME} MACOSX_BUNDLE ${cuda_qt_framework_CUDA_SRCS} ${cuda_qt_framework_SRCS_CXX})
 ELSEIF(WIN32)
-  ADD_EXECUTABLE(CUDA-Qt-Framework WIN32 ${cuda_qt_framework_SRCS_CXX})
+  CUDA_ADD_EXECUTABLE(${CMAKE_PROJECT_NAME} WIN32 ${cuda_qt_framework_CUDA_SRCS} ${cuda_qt_framework_SRCS_CXX})
 ENDIF()
 
-TARGET_LINK_LIBRARIES(CUDA-Qt-Framework ${QT_LIBRARIES})
+TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${QT_LIBRARIES})
 
-INSTALL(TARGETS CUDA-Qt-Framework DESTINATION bin)
+INSTALL(TARGETS ${CMAKE_PROJECT_NAME} DESTINATION bin)

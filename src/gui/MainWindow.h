@@ -11,7 +11,9 @@ class MainWindow : public QMainWindow {
 public:
 	MainWindow(QWidget *parent = NULL);
 	
-//private slots:
+private slots:
+	void runCUDAProgram();
+
 
 private:
 	Ui::MainWindow ui;
