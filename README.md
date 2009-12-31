@@ -43,6 +43,6 @@ Compiling/Installing
 Qt doesn't install any DLL files into the system32 directory for Windows. If
 you get any errors about missing DLL files this is probably because the Qt bin
 directory is not in your PATH variable. You can either add it or copy the
-missing DLL files into the application directory.
-The same applies for CUDA (e.g. cudart.dll). If you have the 64bit version of
-the SDK
+missing DLL files into the application directory. The same applies for CUDA
+(e.g. cudart.dll). If you have the 64bit version of the SDK you can recompile
+it, project files for Visual Studio are included.
