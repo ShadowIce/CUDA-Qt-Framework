@@ -12,6 +12,7 @@ INCLUDE(${QT_USE_FILE})
 # List of all the C++ source code files
 SET(cuda_qt_framework_SRCS_CXX
 	gui/MainWindow.cpp
+	gui/OGLWidget.cpp
 	
 	main.cpp
 )
@@ -19,6 +20,7 @@ SET(cuda_qt_framework_SRCS_CXX
 # List of all Qt header files
 SET(cuda_qt_framework_MOC_HDRS
 	gui/MainWindow.h
+	gui/OGLWidget.h
 )
 
 # List of Qt .ui files

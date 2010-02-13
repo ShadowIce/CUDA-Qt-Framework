@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>727</width>
-    <height>542</height>
+    <width>1122</width>
+    <height>856</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -23,11 +23,14 @@
    <enum>Qt::LeftToRight</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout">
+   <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QSplitter" name="splitter_2">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="childrenCollapsible">
+       <bool>false</bool>
       </property>
       <widget class="QToolBox" name="toolBoxSettings">
        <property name="currentIndex">
@@ -38,8 +41,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>221</width>
-          <height>386</height>
+          <width>188</width>
+          <height>700</height>
          </rect>
         </property>
         <attribute name="label">
@@ -51,8 +54,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>221</width>
-          <height>386</height>
+          <width>188</width>
+          <height>700</height>
          </rect>
         </property>
         <attribute name="label">
@@ -64,31 +67,37 @@
        <property name="orientation">
         <enum>Qt::Vertical</enum>
        </property>
-       <widget class="QFrame" name="frame">
+       <property name="childrenCollapsible">
+        <bool>false</bool>
+       </property>
+       <widget class="OGLWidget" name="GLWidget" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="minimumSize">
          <size>
-          <width>320</width>
-          <height>240</height>
+          <width>640</width>
+          <height>480</height>
          </size>
         </property>
         <property name="autoFillBackground">
-         <bool>false</bool>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background:rgb(0, 0, 0);</string>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
+         <bool>true</bool>
         </property>
        </widget>
        <widget class="QTabWidget" name="tabTextOutput">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="minimumSize">
          <size>
-          <width>320</width>
-          <height>180</height>
+          <width>640</width>
+          <height>240</height>
          </size>
         </property>
         <property name="currentIndex">
@@ -98,7 +107,7 @@
          <attribute name="title">
           <string>Program Log</string>
          </attribute>
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
            <widget class="QPlainTextEdit" name="txtProgramLog"/>
           </item>
@@ -125,7 +134,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>727</width>
+     <width>1122</width>
      <height>24</height>
     </rect>
    </property>
@@ -152,6 +161,18 @@
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>OGLWidget</class>
+   <extends>QWidget</extends>
+   <header>oglwidget.h</header>
+   <container>1</container>
+   <slots>
+    <slot>updateGL()</slot>
+    <slot>updateOverlayGL()</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
  <slots>
