@@ -36,7 +36,7 @@ SET(cuda_qt_framework_CUDA_SRCS
 
 # .ui files
 QT4_WRAP_UI(cuda_qt_framework_SRCS_CXX ${cuda_qt_framework_UIS})
-INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR})
+INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR} gui)
 
 # for moc
 QT4_WRAP_CPP(cuda_qt_framework_SRCS_CXX ${cuda_qt_framework_MOC_HDRS})
